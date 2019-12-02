@@ -1,4 +1,5 @@
-### 最终排名-26/2
+### 最终排名26/260队伍（553人）
+https://biendata.com/competition/aminer2019/final-leaderboard/
 ##### 方案
 ```
 步骤:
