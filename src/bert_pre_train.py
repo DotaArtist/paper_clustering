@@ -7,12 +7,14 @@ from config import max_sentence_len
 
 
 class BertPreTrain(object):
-    def __init__(self, mode='remote'):
+    def __init__(self, mode='remote', language='ch', padding=True, embedding_dim=50):
         if mode == 'remote':
             self.model = BertClient(ip='192.168.236.14', port=5555, check_version=False)
         elif mode == 'pre_train':
             self.model = PreTrainProcess(path=config.pre_train_embedding,
-                                         embedding_dim=256, sentence_len=max_sentence_len)
+                                         embedding_dim=embedding_dim,
+                                         sentence_len=max_sentence_len,
+                                         language=language, padding=padding)
         else:
             self.model = BertClient(ip='127.0.0.1', port=5555, check_version=False)
 
